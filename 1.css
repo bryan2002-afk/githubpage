@@ -1,0 +1,66 @@
+
+
+/* Contenedor del icono 
+.social-icon {
+  position: relative;
+  display: inline-block;
+  margin: 50px;
+  font-size: 30px;
+  color: #1da1f2;
+  cursor: pointer;
+}*/
+
+.social-icon {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  background-color: white;
+  border-radius: 50%;
+  margin: 20px; /* margen alrededor del círculo */
+  font-size: 24px;
+  color: #1da1f2;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* sombra suave */
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+
+/* Estilo de la burbuja tooltip */
+.tooltip {
+  position: absolute;
+  top: -45px;
+  background-color: #1da1f2;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  z-index: 2;
+}
+
+/* Flechita inferior de la burbuja */
+.tooltip::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid #1da1f2;
+}
+
+/* Mostrar tooltip al pasar el mouse */
+.social-icon:hover .tooltip {
+  opacity: 1;
+  transform: translateY(0);
+}
