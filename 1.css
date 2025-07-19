@@ -1,66 +1,114 @@
+/* background: linear-gradient(45deg, #F77737, #FCAF45, #F7A800, #DC2E92, #8134AF, #515BD4);
+*/
 
+  /* Variables CSS para los colores */
+  :root {
+    --twitter-color: #1da1f2;
+    --facebook-color: #1877F2;
+    --whatsapp-color: #25D366;
+    --instagram-color: #E4405F;
 
-/* Contenedor del icono 
-.social-icon {
-  position: relative;
-  display: inline-block;
-  margin: 50px;
-  font-size: 30px;
-  color: #1da1f2;
-  cursor: pointer;
-}*/
+  }
 
-.social-icon {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 60px;
-  height: 60px;
-  background-color: white;
-  border-radius: 50%;
-  margin: 20px; /* margen alrededor del círculo */
-  font-size: 24px;
-  color: #1da1f2;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* sombra suave */
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
+  /* Estilos comunes para los íconos */
+  .social-icon, .social-icon-1, .social-icon-2, .social-icon-3 {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    background-color: white;
+    border-radius: 50%;
+    margin: 20px;
+    font-size: 24px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
 
+  .tooltip, .tooltip-1, .tooltip-2, .tooltip-3 {
+    position: absolute;
+    top: -45px;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 14px;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    z-index: 2;
+    color: white;
+  }
 
-/* Estilo de la burbuja tooltip */
-.tooltip {
-  position: absolute;
-  top: -45px;
-  background-color: #1da1f2;
-  color: white;
-  padding: 6px 12px;
-  border-radius: 20px;
-  font-size: 14px;
-  opacity: 0;
-  pointer-events: none;
-  transform: translateY(10px);
-  transition: all 0.3s ease;
-  white-space: nowrap;
-  z-index: 2;
-}
+  .tooltip::after, .tooltip-1::after, .tooltip-2::after, .tooltip-3::after {
+    content: "";
+    position: absolute;
+    bottom: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+  }
 
-/* Flechita inferior de la burbuja */
-.tooltip::after {
-  content: "";
-  position: absolute;
-  bottom: -6px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 0;
-  height: 0;
-  border-left: 6px solid transparent;
-  border-right: 6px solid transparent;
-  border-top: 6px solid #1da1f2;
-}
+  /* Estilos específicos para cada red social */
+  .social-icon {
+    color: var(--twitter-color);
+  }
 
-/* Mostrar tooltip al pasar el mouse */
-.social-icon:hover .tooltip {
-  opacity: 1;
-  transform: translateY(0);
-}
+  .social-icon .tooltip {
+    background-color: var(--twitter-color);
+  }
+
+  .social-icon .tooltip::after {
+    border-top: 6px solid var(--twitter-color);
+  }
+
+  .social-icon-1 {
+    color: var(--facebook-color);
+  }
+
+  .social-icon-1 .tooltip-1 {
+    background-color: var(--facebook-color);
+  }
+
+  .social-icon-1 .tooltip-1::after {
+    border-top: 6px solid var(--facebook-color);
+  }
+
+  .social-icon-2 {
+    color: var(--whatsapp-color);
+  }
+
+  .social-icon-2 .tooltip-2 {
+    background-color: var(--whatsapp-color);
+  }
+
+  .social-icon-2 .tooltip-2::after {
+    border-top: 6px solid var(--whatsapp-color);
+  }
+
+  .social-icon-3 {
+    color: var(--instagram-color);
+  }
+
+  .social-icon-3 .tooltip-3 {
+    background-color: var(--instagram-color);
+  }
+
+  .social-icon-3 .tooltip-3::after {
+    border-top: 6px solid var(--instagram-color);
+  }
+
+  /* Mostrar tooltip al pasar el mouse */
+  .social-icon:hover .tooltip,
+  .social-icon-1:hover .tooltip-1,
+  .social-icon-2:hover .tooltip-2,
+  .social-icon-3:hover .tooltip-3 {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
